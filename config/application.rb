@@ -34,5 +34,7 @@ module PeriodicTable
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.hosts << "3000-fb60ad9a-8d85-4a3e-a88e-6a811bc580bd.ws-eu03.gitpod.io"
   end
 end
