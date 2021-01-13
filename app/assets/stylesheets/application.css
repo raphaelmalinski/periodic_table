@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .periodic_table_container {
+     display: grid;
+     grid-template-columns: 20px repeat(18, 70px);
+     grid-template-rows: 25px repeat(7, 70px) 25px repeat(2, 70px);
+     padding: 35px;
+     background-color: white;
+ }
