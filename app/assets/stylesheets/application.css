@@ -14,10 +14,42 @@
  *= require_self
  */
 
- .periodic_table_container {
+.periodic_table_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .periodic_table {
      display: grid;
-     grid-template-columns: 20px repeat(18, 70px);
-     grid-template-rows: 25px repeat(7, 70px) 25px repeat(2, 70px);
-     padding: 35px;
+     grid-template-columns: 20px repeat(18, 50px);
+     grid-template-rows: 25px repeat(10, 50px);
      background-color: white;
+     align-content: center;
  }
+
+.number {
+    color: black;
+    font-size: 10px;
+}
+
+.symbol {
+    color: black;
+    font-size: 15px;
+}
+
+.name {
+    color: black;
+    font-size: 9px;
+}
+
+.atomic_mass {
+    color: black;
+    font-size: 8px;
+}
+
+.element_content{
+    line-height: 10px;
+    text-align: left;
+    padding: 1px;
+}

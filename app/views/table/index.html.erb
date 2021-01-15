@@ -1,16 +1,43 @@
 <div class="periodic_table_container">
-  <div class="row">
-    <ul>
-    <% @elements["order"].each do |element| %>
-      <li>
-        <%= @elements[element]["name"] %>
-        <%= @elements[element]["number"] %>-
-        <%= @elements[element]["period"] %>,
-        <%= @elements[element]["atomic_mass"] %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
+    <div class="periodic_table">
+        <% @x_size.each do |x| %>
+            <div style="text-align: center; 
+                grid-column-start: <%= (x+1).to_s %>; 
+                grid-column-end: <%= (x+2).to_s %>;">
+                <p style="color: black;"><%= x.to_s%></p>
+            </div>
+        <% end %>
+
+        <% @y_size.each do |y| %>
+            <div style="text-align: center; 
+                grid-row-start: <%= (y+1).to_s %>; 
+                grid-row-end: <%= (y+2).to_s %>;">
+                <p style="color: black;"><%= y.to_s%></p>
+            </div>
+        <% end %>
+
+        <% @elements["order"].each do |element| %>
+            <div style="text-align: center; 
+                    grid-row-start: <%= (@elements[element]["ypos"]+1).to_s %>; 
+                    grid-row-end: <%= (@elements[element]["ypos"]+2).to_s %>;     
+                    <% if @elements[element]["ypos"] < 9 %>  
+                        grid-column-start: <%= (@elements[element]["xpos"]+1).to_s %>; 
+                        grid-column-end: <%= (@elements[element]["xpos"]+2).to_s %>;
+                    <% else %>
+                        grid-column-start: <%= (@elements[element]["xpos"]+2).to_s %>; 
+                        grid-column-end: <%= (@elements[element]["xpos"]+3).to_s %>;
+                    <% end %>
+                    background-color: white; 
+                    margin: 1px;">
+                <p class="element_content">
+                        <span class="number"><%= @elements[element]["number"] %></span><br>
+                        <span class="symbol"><%= @elements[element]["symbol"] %></span><br>
+                        <span class="name"><%= @elements[element]["name"] %></span><br>
+                        <span class="atomic_mass"><%= @elements[element]["atomic_mass"] %></span>
+                </p>
+            </div>
+        <% end %>
+    </div>
 </div>
 
 
