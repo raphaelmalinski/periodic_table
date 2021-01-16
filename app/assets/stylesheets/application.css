@@ -118,6 +118,10 @@
     transform: scale(1.1);
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .noble_gas{
     background-color: hsl(300deg 44% 82%);
 }

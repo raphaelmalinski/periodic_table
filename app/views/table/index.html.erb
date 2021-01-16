@@ -1,3 +1,4 @@
+ 
 <div class="periodic_table_container">
     <div class="periodic_table">
         <% @x_size.each do |x| %>
@@ -34,13 +35,16 @@
                         grid-column-end: <%= (@elements[element]["xpos"]+3).to_s %>;
                     <% end %> 
                     margin: 1px;">
-                <p class="element_content">
-                        <span class="number"><%= @elements[element]["number"] %></span><br>
-                        <span class="symbol"><%= @elements[element]["symbol"] %></span><br>
-                        <span class="name"><%= @elements[element]["name"] %></span><br>
-                        <span class="atomic_mass"><%= @elements[element]["atomic_mass"] %></span>
-                </p>
+                <%= link_to element_path do %>
+                    <p class="element_content">
+                            <span class="number"><%= @elements[element]["number"] %></span><br>
+                            <span class="symbol"><%= @elements[element]["symbol"] %></span><br>
+                            <span class="name"><%= @elements[element]["name"] %></span><br>
+                            <span class="atomic_mass"><%= @elements[element]["atomic_mass"] %></span>
+                    </p>
+                <% end %>
             </div>
+            
         <% end %>
     </div>
 </div>
