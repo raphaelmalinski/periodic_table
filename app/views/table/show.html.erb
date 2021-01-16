@@ -1,0 +1,14 @@
+<div class="show_element_container">
+    <div class="show_element <%= @elements[@element]["category"].gsub(" ","_").gsub(",","").gsub("-", "_") %>">
+        <span class="number_show"><%= @elements[@element]["number"] %></span></br>
+        <span class="symbol_show"><%= @elements[@element]["symbol"] %></span></br>
+        <span class="name_show"><%= @elements[@element]["name"] %></span></br>
+        <span class="number_show"><%= @elements[@element]["atomic_mass"] %></span></br>
+        <% @elements[@element]["shells"].each_with_index do |shell, index| %>
+            <span class="number_show"><%= shell %></span>
+            <% if index != @elements[@element]["shells"].size - 1 %>
+                ,
+            <% end %>
+        <% end %>
+    </div>
+</div>

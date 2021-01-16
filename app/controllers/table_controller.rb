@@ -7,6 +7,9 @@ class TableController < ApplicationController
   end
 
   def show
-    @element = Table.find(params[:id])
+    file = File.read("db/data.json")
+    @elements = JSON.parse(file)
+    @element_params = params
+    @element = @element_params[:id]
   end
 end
