@@ -35,7 +35,7 @@
                         grid-column-end: <%= (@elements[element]["xpos"]+3).to_s %>;
                     <% end %> 
                     margin: 1px;">
-                <%= link_to element_path do %>
+                <%= link_to table_path(:id=> element ) do %>
                     <p class="element_content">
                             <span class="number"><%= @elements[element]["number"] %></span><br>
                             <span class="symbol"><%= @elements[element]["symbol"] %></span><br>

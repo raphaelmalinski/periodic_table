@@ -5,4 +5,8 @@ class TableController < ApplicationController
     @x_size = (1..18)
     @y_size = (1..8)
   end
+
+  def show
+    @element = Table.find(params[:id])
+  end
 end
