@@ -1,3 +1,4 @@
+<%= link_to "Ver tabela completa", root_path, {:class => "go_back_button"} %>
 <div class="show_element_container">
     <div class="show_element <%= @elements[@element]["category"].gsub(" ","_").gsub(",","").gsub("-", "_") %>">
         <span class="number_show"><%= @elements[@element]["number"] %></span></br>
@@ -10,5 +11,22 @@
                 ,
             <% end %>
         <% end %>
+    </div>
+    <div class="show_element_details <%= @elements[@element]["category"].gsub(" ","_").gsub(",","").gsub("-", "_") %>">
+        <table class="details_table">
+            <tr>
+                <th colspan="2">Detalhes</th>
+            </tr>
+            <% @elements[@element].each_with_index do |value, index| %>
+                <tr>
+                    <td class="atributte"><%= @elements[@element].keys[index].capitalize.gsub("_"," ") %></td>
+                    <% if value[1].kind_of?(Array) %>
+                        <td><%= value[1].join(', ') %></td>
+                    <% else %>
+                        <td><%= value[1] %></td>
+                    <% end %>
+                </tr>
+            <% end %>
+        </table>
     </div>
 </div>
