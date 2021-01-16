@@ -1,7 +1,7 @@
 <div class="periodic_table_container">
     <div class="periodic_table">
         <% @x_size.each do |x| %>
-            <div style="text-align: center; 
+            <div class="coordinates" style=" 
                 grid-column-start: <%= (x+1).to_s %>; 
                 grid-column-end: <%= (x+2).to_s %>;">
                 <p style="color: black;"><%= x.to_s%></p>
@@ -9,15 +9,21 @@
         <% end %>
 
         <% @y_size.each do |y| %>
-            <div style="text-align: center; 
+            <div class="coordinates" style="
                 grid-row-start: <%= (y+1).to_s %>; 
                 grid-row-end: <%= (y+2).to_s %>;">
                 <p style="color: black;"><%= y.to_s%></p>
             </div>
         <% end %>
 
+        <div class="bottom_elements_coordinates"></div>
+        <div class="range first_range">57-71</div>
+        <div class="range second_range">89-103</div>
+        <div class="y_coordinate six_y_coordinate">6</div>
+        <div class="y_coordinate seven_y_coordinate">7</div>
+
         <% @elements["order"].each do |element| %>
-            <div style="text-align: center; 
+            <div class="element <%= @elements[element]["category"].gsub(" ","_").gsub(",","").gsub("-", "_") %>" style="text-align: center; 
                     grid-row-start: <%= (@elements[element]["ypos"]+1).to_s %>; 
                     grid-row-end: <%= (@elements[element]["ypos"]+2).to_s %>;     
                     <% if @elements[element]["ypos"] < 9 %>  
@@ -26,8 +32,7 @@
                     <% else %>
                         grid-column-start: <%= (@elements[element]["xpos"]+2).to_s %>; 
                         grid-column-end: <%= (@elements[element]["xpos"]+3).to_s %>;
-                    <% end %>
-                    background-color: white; 
+                    <% end %> 
                     margin: 1px;">
                 <p class="element_content">
                         <span class="number"><%= @elements[element]["number"] %></span><br>

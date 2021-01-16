@@ -18,14 +18,73 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 40px;
+    
 }
 
  .periodic_table {
      display: grid;
-     grid-template-columns: 20px repeat(18, 50px);
-     grid-template-rows: 25px repeat(10, 50px);
-     background-color: white;
+     grid-template-columns: 20px repeat(18, 55px);
+     grid-template-rows: 25px repeat(10, 55px);
      align-content: center;
+     background-color: white;
+     padding: 20px;
+     box-shadow: -7px 10px 8px 1px rgba(0,0,0,1);
+ }
+
+ .coordinates{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+ }
+
+ .bottom_elements_coordinates {
+    grid-row-start: 7; 
+    grid-row-end: 12;
+    grid-column: 4;
+    background-color: #cef;
+    border: 2px solid;
+    border-color: rgb(127, 127, 201);
+    border-radius: 3px;
+ }
+ 
+ .range{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(103, 103, 192);
+    font-size: 12px;
+    text-align: center;
+
+ }
+
+ .first_range{
+    grid-row: 7;
+    grid-column: 4;
+ }
+
+ .second_range {
+    grid-row: 8;
+    grid-column: 4;
+ }
+
+ .y_coordinate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    color: rgb(103, 103, 192);
+ }
+
+ .six_y_coordinate {
+    grid-row: 10;
+    grid-column: 4;
+ }
+
+ .seven_y_coordinate {
+    grid-row: 11;
+    grid-column: 4;
  }
 
 .number {
@@ -36,6 +95,7 @@
 .symbol {
     color: black;
     font-size: 15px;
+    font-weight: bolder;
 }
 
 .name {
@@ -52,4 +112,64 @@
     line-height: 10px;
     text-align: left;
     padding: 1px;
+}
+
+.element:hover {
+    transform: scale(1.1);
+}
+
+.noble_gas{
+    background-color: hsl(300deg 44% 82%);
+}
+
+.diatomic_nonmetal {
+    background-color: hsl(120deg 73% 74%);
+}
+
+.alkali_metal {
+    background-color: hsl(48deg 77% 64%);
+}
+
+.alkaline_earth_metal {
+    background-color: hsl(60deg 83% 67%);
+}
+
+.transition_metal {
+    background-color: hsl(0deg 63% 88%);
+}
+
+.metalloid {
+    background-color: hsl(165deg 58% 76%);
+}
+
+.unknown_probably_transition_metal {
+    background-color: #eed;
+}
+
+.lanthanide {
+    background-color: hsl(36deg 82% 80%);
+}
+
+.actinide{
+    background-color: hsl(340deg 81% 89%);
+}
+
+.polyatomic_nonmetal {
+    background-color: hsl(80deg 73% 74%);
+}
+
+.post_transition_metal {
+    background-color: hsl(135deg 58% 76%);
+}
+
+.unknown_probably_post_transition_metal {
+    background-color: #edd;
+}
+
+.unknown_probably_metalloid {
+    background-color: hsl(100deg 58% 76%);
+}
+
+.unknown_predicted_to_be_noble_gas {
+    background-color: hsl(200deg 44% 82%);
 }
